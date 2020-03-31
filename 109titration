@@ -18,6 +18,11 @@ from error_handling.check_pH_values import check_pH_values
 from error_handling.is_str_float import is_str_float
 from error_handling.is_str_int import is_str_int
 
+from titration import titration
+from transform_to_float_array import transform_to_float_array
+
+from print_first_derivative import print_first_derivative
+
 def main(ac: int, av: list):
 
     if ac != 2 :
@@ -35,14 +40,17 @@ def main(ac: int, av: list):
     with open(av[1], "r") as fd :
         stock = [line.split(';') for line in fd.read().splitlines()]
 
-    if len(stock) <= 0 :
+    if len(stock) <= 2 :
         error_handler()
 
     for element in stock :
         if len(element) != 2 or not is_str_float(element[0]) or not check_pH_values(element[1]) :
             error_handler()
 
-    print(stock)
+    stock = transform_to_float_array(stock)
+
+    first_derivative = titration(stock)
+    print_first_derivative(first_derivative, stock)
     return 0
 
 if __name__ == "__main__":

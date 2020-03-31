@@ -11,6 +11,6 @@ def check_pH_values(stock: str) :
         stock = float(stock)
     except :
         return False
-    if stock < 0.0 or stock > 14.0 :
+    if not 0 < stock < 14 :
         return False
     return True
