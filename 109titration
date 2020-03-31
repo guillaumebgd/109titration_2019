@@ -22,6 +22,7 @@ from titration import titration
 from transform_to_float_array import transform_to_float_array
 
 from print_first_derivative import print_first_derivative
+from print_equivalence_point import print_equivalence_point
 
 def main(ac: int, av: list):
 
@@ -51,6 +52,9 @@ def main(ac: int, av: list):
 
     first_derivative = titration(stock)
     print_first_derivative(first_derivative, stock)
+    print()
+    print_equivalence_point(first_derivative, stock, 3)
+    print()
     return 0
 
 if __name__ == "__main__":
