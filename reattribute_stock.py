@@ -1,4 +1,4 @@
-
+# -*- coding: Utf-8 -*
 ##
 ## EPITECH PROJECT, 2019
 ## 109titration_2019

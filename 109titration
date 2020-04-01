@@ -55,7 +55,7 @@ def main(ac: int, av: list):
     first_derivative = titration(stock)
     print_first_derivative(first_derivative, stock)
     print()
-    print_equivalence_point(first_derivative, stock, 3)
+    pos_eq = print_equivalence_point(first_derivative, stock)
     print()
     stock = reattribute_stock(stock, first_derivative)
     second_derivative = titration(stock)
