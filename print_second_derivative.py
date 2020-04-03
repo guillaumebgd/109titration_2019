@@ -11,4 +11,4 @@ def print_second_derivative(second_deriv: list, stock: list) :
     print("Second derivative:")
 
     for i in range(0, len(second_deriv)) :
-        print("%.1fml -> %.2f" % (stock[i + 1][0], second_deriv[i]))
+        print("%.1f ml -> %.2f" % (stock[i + 1][0], second_deriv[i]))

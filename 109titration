@@ -51,7 +51,6 @@ def main(ac: int, av: list):
             error_handler()
 
     stock = transform_to_float_array(stock)
-
     first_derivative = titration(stock)
     print_first_derivative(first_derivative, stock)
     print()
@@ -60,6 +59,8 @@ def main(ac: int, av: list):
     stock = reattribute_stock(stock, first_derivative)
     second_derivative = titration(stock)
     print_second_derivative(second_derivative, stock)
+    print()
+
     return 0
 
 if __name__ == "__main__":
