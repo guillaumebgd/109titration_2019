@@ -59,7 +59,6 @@ def main(ac: int, av: list):
     stock = reattribute_stock(stock, first_derivative)
     second_derivative = titration(stock)
     print_second_derivative(second_derivative, stock)
-    print()
 
     return 0
 
