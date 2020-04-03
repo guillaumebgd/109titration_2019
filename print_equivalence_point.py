@@ -16,5 +16,5 @@ def print_equivalence_point(deriv: list, stock: list) :
             eq_pt = stock[i][0]
             pos_eq = i - 1
 
-    print("Equivalence point at %.1fml" % eq_pt)
+    print("Equivalence point at %.1f ml" % eq_pt)
     return (pos_eq)
