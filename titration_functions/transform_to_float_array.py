@@ -6,7 +6,7 @@
 ## transform_to_float_array.py
 ##
 
-from error_handling.error_handler import error_handler
+from titration_error_handling.error_handler import error_handler
 
 def transform_to_float_array(stock: list) :
 

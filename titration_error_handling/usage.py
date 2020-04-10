@@ -8,8 +8,8 @@
 
 def usage():
     usage = """USAGE
-\t./109titration file
+    ./109titration file
 
 DESCRIPTION
-\tfile\ta csv file containing "vol;ph" lines"""
+    file\ta csv file containing "vol;ph" lines"""
     print(usage)

@@ -6,9 +6,9 @@
 ## is_str_int.py
 ##
 
-def is_str_int(stock: str) :
+def is_str_int(string: str) :
     try :
-        stock = int(stock)
+        string = int(string)
     except :
         return False
     return True

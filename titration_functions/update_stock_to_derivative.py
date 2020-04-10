@@ -6,8 +6,11 @@
 ## reattribute_stock.py
 ##
 
-def reattribute_stock(stock: list, first_deriv: list) :
+def update_stock_to_derivative(stock: list, derivative: list):
+
     stock = (stock[:-1])[1:]
+
     for i in range(0, len(stock)) :
-        stock[i][1] = first_deriv[i]
+        stock[i][1] = derivative[i]
+
     return (stock)

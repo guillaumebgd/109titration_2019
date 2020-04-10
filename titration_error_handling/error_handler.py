@@ -8,7 +8,7 @@
 
 import sys
 
-from error_handling.usage import usage
+from titration_error_handling.usage import usage
 
 def error_handler() :
     usage()

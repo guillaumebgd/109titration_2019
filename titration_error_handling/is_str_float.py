@@ -6,9 +6,9 @@
 ## is_str_float.py
 ##
 
-def is_str_float(stock: str) :
+def is_str_float(string: str) :
     try :
-        stock = float(stock)
+        string = float(string)
     except :
         return False
     return True
