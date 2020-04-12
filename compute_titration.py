@@ -7,41 +7,66 @@
 ##
 
 from titration_functions.find_estimated_eq_pt import find_estimated_eq_pt
-from titration_functions.find_and_print_eq_pt import find_and_print_eq_pt
+from titration_functions.find_eq_pt import find_eq_pt
 from titration_functions.linear_interpolation import linear_interpolation
 from titration_functions.print_derivative import print_derivative
 from titration_functions.transform_to_float_array import transform_to_float_array
 from titration_functions.update_stock_to_derivative import update_stock_to_derivative
 from titration_functions.weighted_derivative import weighted_derivative
 
-def compute_titration(stock: list):
+def is_list_constant(stock: list):
+    first_occ = stock[0][1]
+    for i in range(0, len(stock)):
+        if stock[i][1] != first_occ:
+            return False
+    return True
 
-    stock = transform_to_float_array(stock)
-    first_derivative = weighted_derivative(stock)
-    stock = update_stock_to_derivative(stock, first_derivative)
+def first_derivative(stock: list):
     print("Derivative:")
+    stock = update_stock_to_derivative(stock, weighted_derivative(stock))
     print_derivative(stock)
-    print()
-    pos_eq = find_and_print_eq_pt(stock)
-    print()
+    return stock
+
+def second_derivative(stock: list):
     print("Second derivative:")
-    second_derivative = weighted_derivative(stock)
-    stock = update_stock_to_derivative(stock, second_derivative)
+    stock = update_stock_to_derivative(stock, weighted_derivative(stock))
     print_derivative(stock)
-    pos_eq -= 1
-    print()
-    print("Second derivative estimated:")
+    return stock
+
+def second_derivative_estimated(stock: list, pos_eq: int):
     estimation = []
-    range_of_interpolations = []
+    list_pts_to_interpolate = []
+
+    print("Second derivative estimated:")
     if pos_eq > 0:
-        range_of_interpolations.append(stock[pos_eq - 1])
-    range_of_interpolations.append(stock[pos_eq])
-    if pos_eq < len(stock):
-        range_of_interpolations.append(stock[pos_eq + 1])
-    for i in range(0, len(range_of_interpolations) - 1):
-        linear_interpolation(estimation, range_of_interpolations[i], range_of_interpolations[i + 1], 0.1)
-    estimation.append([range_of_interpolations[-1][0], range_of_interpolations[-1][1]])
+        pos_eq -= 1
+    if pos_eq > len(stock) - 1:
+        pos_eq = len(stock) - 1
+    if pos_eq > 0:
+        list_pts_to_interpolate.append(stock[pos_eq - 1])
+    list_pts_to_interpolate.append(stock[pos_eq])
+    if pos_eq < len(stock) - 1:
+        list_pts_to_interpolate.append(stock[pos_eq + 1])
+    for i in range(0, len(list_pts_to_interpolate) - 1):
+        linear_interpolation(estimation, list_pts_to_interpolate[i], list_pts_to_interpolate[i + 1], 0.1)
+    estimation.append([list_pts_to_interpolate[-1][0], list_pts_to_interpolate[-1][1]])
     print_derivative(estimation)
+    return estimation
+
+def compute_titration(stock: list):
+    stock = transform_to_float_array(stock)
+    stock = first_derivative(stock)
     print()
-    estimated_eq_pt = find_estimated_eq_pt(estimation)
-    print("Equivalence point at %.1f ml" % estimated_eq_pt[0])
+    pos_eq = find_eq_pt(stock)
+    first_eq_pt = stock[pos_eq][0]
+    print("Equivalence point at %.1f ml" % first_eq_pt)
+    print()
+    stock = second_derivative(stock)
+    print()
+    if is_list_constant(stock) is not True :
+        estimation = second_derivative_estimated(stock, pos_eq)
+        print()
+        estimated_eq_pt = find_estimated_eq_pt(estimation)
+        print("Equivalence point at %.1f ml" % estimated_eq_pt[0])
+    else:
+        print("Equivalence point at %.1f ml" % first_eq_pt)

@@ -10,6 +10,7 @@ import sys
 
 def taylors_interpolation_process(xa: float, xb: float, ya: float, yb: float, x: float):
     result = 0
+
     try:
         result = ya + (x - xa) * ((yb - ya) / (xb - xa))
     except:
@@ -17,7 +18,6 @@ def taylors_interpolation_process(xa: float, xb: float, ya: float, yb: float, x:
     return result
 
 def linear_interpolation(estimation: list, a: list, b: list, increaser: float):
-
     i = 0
     x = a[0]
 

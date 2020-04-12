@@ -6,9 +6,9 @@
 ## is_str_float.py
 ##
 
-def is_str_float(string: str) :
+def is_str_positive_float(string: str) :
     try :
         string = float(string)
     except :
         return False
-    return True
+    return True if string >= 0 else False
