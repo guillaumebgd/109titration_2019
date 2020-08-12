@@ -6,13 +6,7 @@
 ## compute_titration.py
 ##
 
-from titration_functions.find_estimated_eq_pt import find_estimated_eq_pt
-from titration_functions.find_eq_pt import find_eq_pt
-from titration_functions.linear_interpolation import linear_interpolation
-from titration_functions.print_derivative import print_derivative
-from titration_functions.transform_to_float_array import transform_to_float_array
-from titration_functions.update_stock_to_derivative import update_stock_to_derivative
-from titration_functions.weighted_derivative import weighted_derivative
+from src import *
 
 def is_list_constant(stock: list):
     first_occ = stock[0][1]

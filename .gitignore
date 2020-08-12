@@ -1,2 +1,6 @@
+#Local Files
+.vscode
 *.csv
+
+#Langages Dumps
 __pycache__

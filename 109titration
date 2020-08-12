@@ -9,13 +9,13 @@
 
 import os, sys
 
-from titration_error_handling.is_str_positive_float import is_str_positive_float
-from titration_error_handling.is_str_int import is_str_int
-from titration_error_handling.check_pH_values import check_pH_values as is_str_pH
-from titration_error_handling.error_handler import error_handler
-from titration_error_handling.usage import usage
+from src.error_handling.check_pH_values import *
+from src.error_handling.error_handler import *
+from src.error_handling.is_str_int import *
+from src.error_handling.is_str_positive_float import *
+from src.error_handling.usage import *
 
-from compute_titration import compute_titration
+from src.compute_titration import compute_titration
 
 def main(ac: int, av: list):
 
