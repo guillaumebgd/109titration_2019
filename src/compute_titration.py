@@ -6,7 +6,13 @@
 ## compute_titration.py
 ##
 
-from src import *
+from src.find_estimated_eq_pt import find_estimated_eq_pt
+from src.find_eq_pt import find_eq_pt
+from src.linear_interpolation import linear_interpolation
+from src.print_derivative import print_derivative
+from src.transform_to_float_array import transform_to_float_array
+from src.update_stock_to_derivative import update_stock_to_derivative
+from src.weighted_derivative import weighted_derivative
 
 def is_list_constant(stock: list):
     first_occ = stock[0][1]
