@@ -9,7 +9,7 @@ A first year Epitech math project done during the 2nd semester.<br>
 This program tries to find the equivalence point of a given function curve using derivatives.<br>
 <br>
 To process that, at first, we will do the weighted derivative of the function and estimate an equivalence point, then, do a weighted derivative of the what we obtained.<br>
-To finish, if it is possible, we will take the closest points to the estimation, we did before, and apply a linear interpolation to be more precise about the equivalence point.<br>
+To finish, if it is possible, we will take the closest points to the estimation we did before and apply a linear interpolation to be more precise about the equivalence point.<br>
 
 ## Program Input
 
