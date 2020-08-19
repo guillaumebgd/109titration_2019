@@ -13,7 +13,7 @@ To process that, at first, we will do the weighted derivative of the function an
 ## Program Input
 
 You need to give, as input, a path to a <code>.csv</code> file.<br>
-In the file, each line will sketch a point of the curve as: <code>Volume;pH</code><br>
+In the file, each line will sketch a point of the curve by being formatted as: <code>Volume;pH</code><br>
 
 ![109titration Normal Input](https://github.com/guillaumebgd/109titration_2019/blob/master/.github_assets/109titration_normal_input.png?raw=true)
 
