@@ -9,9 +9,9 @@ This program tries to find the equivalence point of a given function curve using
 
 We have to, for the project, use 3 different methods to reproduce the integral behavior.<br>
 
-* The midpoint method.
-* The trapezoidal method.
-* The Simpson method.
+* The [midpoint](https://www.purplemath.com/modules/midpoint.htm) rule. (Sometimes explained by teachers during high school)
+* The [trapezoidal](https://byjus.com/maths/trapezoidal-rule/) rule.
+* [Simpson's](https://en.wikipedia.org/wiki/Simpson%27s_rule) rule.
 
 ## Program Input
 
